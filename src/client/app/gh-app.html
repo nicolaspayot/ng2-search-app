@@ -5,23 +5,7 @@
   <div>
     <ul>
       <li *ngFor="#repo of repositories; trackBy:trackReposBy">
-        <div class="bold">
-          {{repo.name}}
-        </div>
-        <a [href]="repo.html_url">{{repo.html_url}}</a>
-        <div>
-          <span class="red">issues: <span class="bold">{{repo.open_issues_count}}</span></span> |
-          <span class="green">stars: <span class="bold">{{repo.stargazers_count}}</span></span>
-        </div>
-        <div class="user">
-          <img [src]="repo.owner.avatar_url" />
-          <div>
-            {{repo.owner.login}}
-          </div>
-          <div>
-            <a [href]="repo.owner.html_url">{{repo.owner.html_url}}</a>
-          </div>
-        </div>
+        <repository [data]="repo"></repository>
       </li>
     </ul>
   </div>
