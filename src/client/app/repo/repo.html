@@ -7,11 +7,11 @@
   <span class="green">stars: <span class="bold">{{data.stargazers_count}}</span></span>
 </div>
 <div class="user">
-  <img [src]="data.owner.avatar_url" />
+  <img [src]="data.owner?.avatar_url" />
   <div>
-    {{data.owner.login}}
+    {{data.owner?.login}}
   </div>
   <div>
-    <a [href]="data.owner.html_url">{{data.owner.html_url}}</a>
+    <a [href]="data.owner?.html_url">{{data.owner?.html_url}}</a>
   </div>
 </div>
