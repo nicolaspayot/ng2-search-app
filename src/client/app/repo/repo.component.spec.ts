@@ -13,7 +13,7 @@ describe('RepoComponent', () => {
 
   beforeEachProviders(() => [RepoComponent]);
 
-  it('should test something', injectAsync([TestComponentBuilder], (tcb: TestComponentBuilder) => {
+  it('should display repository data', injectAsync([TestComponentBuilder], (tcb: TestComponentBuilder) => {
     return tcb.createAsync(RepoComponent).then((fixture: ComponentFixture) => {
       const element = fixture.nativeElement;
       const data = {

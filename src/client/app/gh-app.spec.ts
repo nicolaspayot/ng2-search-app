@@ -41,7 +41,7 @@ describe('App: GhApp', () => {
   //   provide(RepoService, { useClass: MockRepoService })
   // ]);
 
-  it('should test something', injectAsync([TestComponentBuilder], (tcb: TestComponentBuilder) => {
+  it('should display a list of repositories', injectAsync([TestComponentBuilder], (tcb: TestComponentBuilder) => {
     return tcb
       // Override <repository> component before providers
       .overrideDirective(GhApp, RepoComponent, MockRepoComponent)
