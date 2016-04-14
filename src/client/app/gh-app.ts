@@ -3,13 +3,17 @@ import {Response} from 'angular2/http';
 import {RepoService} from './repo/repo.service';
 import {Repository} from './repo/repo';
 import {RepoComponent} from './repo/repo.component';
+import {SearchComponent} from './search/search.component';
 
 @Component({
   selector: 'gh-app',
   templateUrl: 'app/gh-app.html',
   styleUrls: ['app/gh-app.css'],
   providers: [RepoService],
-  directives: [RepoComponent]
+  directives: [
+    SearchComponent,
+    RepoComponent
+  ]
 })
 export class GhApp implements OnInit {
 
@@ -26,5 +30,9 @@ export class GhApp implements OnInit {
 
   trackReposBy(index: number, repository: Repository): number {
     return repository.id;
+  }
+
+  search(terms: string): void {
+    console.log('Searching for: ' + terms);
   }
 }

@@ -3,6 +3,7 @@
     Hello, gh-app!
   </h1>
   <div>
+    <search (onSearch)="search($event)"></search>
     <ul>
       <li *ngFor="#repo of repositories; trackBy:trackReposBy">
         <repository [data]="repo"></repository>
