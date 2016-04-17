@@ -2,7 +2,6 @@ import {
   describe,
   it,
   expect,
-  beforeEachProviders,
   injectAsync,
   TestComponentBuilder,
   ComponentFixture
@@ -10,8 +9,6 @@ import {
 import {RepoComponent} from './repo.component';
 
 describe('RepoComponent', () => {
-
-  beforeEachProviders(() => [RepoComponent]);
 
   it('should display repository data', injectAsync([TestComponentBuilder], (tcb: TestComponentBuilder) => {
     return tcb.createAsync(RepoComponent).then((fixture: ComponentFixture) => {

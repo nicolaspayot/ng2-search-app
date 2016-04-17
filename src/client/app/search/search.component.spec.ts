@@ -2,7 +2,6 @@ import {
   describe,
   it,
   expect,
-  beforeEachProviders,
   injectAsync,
   TestComponentBuilder,
   ComponentFixture
