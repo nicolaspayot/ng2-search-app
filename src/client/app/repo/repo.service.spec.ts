@@ -28,8 +28,7 @@ describe('RepoService', () => {
 
   it('should search for repositories', inject(
       [MockBackend, RepoService],
-      (backend: MockBackend, repoService: RepoService
-    ) => {
+      (backend: MockBackend, repoService: RepoService) => {
 
     const items = [{ id: 1, name: 'repo1' }, { id: 2, name: 'repo2' }];
     const response = new Response(new ResponseOptions({ body: { items } }));
