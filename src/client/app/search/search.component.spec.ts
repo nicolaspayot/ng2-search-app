@@ -31,7 +31,6 @@ describe('SearchComponent', () => {
 
       const input = element.querySelector('input');
       input.value = 'Angular 2';
-      input.dispatchEvent(new Event('input'));
 
       setTimeout(() => {
         expect(instance.search).toHaveBeenCalledWith('Angular 2');
