@@ -34,8 +34,8 @@ describe('RepoService', () => {
     const response = new Response(new ResponseOptions({ body: { items } }));
     backend.connections.subscribe((c: MockConnection) => c.mockRespond(response));
 
-    repoService.search('angular 2').subscribe(response => {
-      expect(response.json().items).toBe(items);
+    repoService.search('angular 2').subscribe(_items => {
+      expect(_items).toBe(items);
     });
   }));
 });

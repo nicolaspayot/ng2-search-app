@@ -20,8 +20,7 @@ import {Repository} from './repo/repo';
 class MockRepoService {
   search() {
     const items = ['repo1', 'repo2', 'repo3'];
-    const response = new Response(new ResponseOptions({ body: { items } }));
-    return Observable.of(response);
+    return Observable.of(items);
   }
 }
 
@@ -51,7 +50,11 @@ describe('App: GhApp', () => {
       ])
       .createAsync(GhApp).then((fixture: ComponentFixture) => {
         const element = fixture.nativeElement;
+        const instance = fixture.componentInstance;
+
+        instance.search();
         fixture.detectChanges();
+
         expect(element.querySelectorAll('repository').length).toBe(3);
       });
   }));

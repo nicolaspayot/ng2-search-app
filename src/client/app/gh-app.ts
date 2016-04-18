@@ -1,5 +1,6 @@
-import {Component, OnInit} from 'angular2/core';
+import {Component} from 'angular2/core';
 import {Response} from 'angular2/http';
+import {Observable} from 'rxjs/Rx';
 import {RepoService} from './repo/repo.service';
 import {Repository} from './repo/repo';
 import {RepoComponent} from './repo/repo.component';
@@ -15,24 +16,20 @@ import {SearchComponent} from './search/search.component';
     RepoComponent
   ]
 })
-export class GhApp implements OnInit {
+export class GhApp {
 
-  private repositories: Repository[];
+  private repositories: Observable<Repository[]>;
 
   constructor(private _repoService: RepoService) {}
-
-  ngOnInit() {
-    this._repoService.search('angular 2')
-      .subscribe((response: Response) => {
-        this.repositories = response.json().items;
-      });
-  }
 
   trackReposBy(index: number, repository: Repository): number {
     return repository.id;
   }
 
   search(terms: string): void {
-    console.log('Searching for: ' + terms);
+    // With async pipe in template
+    this.repositories = this._repoService.search(terms);
+    // Without async pipe in template
+    //this._repoService.search(terms).subscribe((items: Repository[]) => this.repositories = items);
   }
 }

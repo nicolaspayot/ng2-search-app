@@ -5,7 +5,7 @@
   <div>
     <search (onSearch)="search($event)"></search>
     <ul>
-      <li *ngFor="#repo of repositories; trackBy:trackReposBy">
+      <li *ngFor="#repo of repositories | async; trackBy:trackReposBy">
         <repository [data]="repo"></repository>
       </li>
     </ul>
