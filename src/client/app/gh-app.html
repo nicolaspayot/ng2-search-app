@@ -4,8 +4,9 @@
   </h1>
   <div>
     <search (onSearch)="search($event)"></search>
+    <sorter *ngIf="isListAvailable()"></sorter>
     <ul>
-      <li *ngFor="#repo of repositories | async; trackBy:trackReposBy">
+      <li *ngFor="#repo of repositories; trackBy:trackReposBy">
         <repository [data]="repo"></repository>
       </li>
     </ul>

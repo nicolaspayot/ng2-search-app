@@ -1,0 +1,8 @@
+div {
+  margin-top: 10px;
+}
+
+input[type=radio] {
+  margin-top: 0px;
+  vertical-align: middle;
+}
