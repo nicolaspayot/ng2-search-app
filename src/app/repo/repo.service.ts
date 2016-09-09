@@ -1,14 +1,16 @@
-import {Injectable, Inject} from 'angular2/core';
-import {Http, Response} from 'angular2/http';
+import {Injectable, Inject} from '@angular/core';
+import {Http, Response} from '@angular/http';
 import {Observable} from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
+
+import {API_URL} from '../shared/';
 import {Repository} from './repo';
 
 @Injectable()
 export class RepoService {
   constructor(
     private _http: Http,
-    @Inject('API_URL') private API_URL: string
+    @Inject(API_URL) private API_URL: string
   ) {}
 
   search(terms): Observable<Repository[]> {

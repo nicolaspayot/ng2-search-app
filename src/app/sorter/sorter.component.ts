@@ -1,7 +1,7 @@
-import {Component} from 'angular2/core';
+import {Component} from '@angular/core';
 
 @Component({
-  selector: 'sorter',
+  selector: 'gh-app-sorter',
   template: `
     <div>
       <input type="radio" id="sort-by-issues" name="sort-by" value="ISSUES">
@@ -10,6 +10,6 @@ import {Component} from 'angular2/core';
       <label for="sort-by-stars">sort by stars</label>
     </div>
   `,
-  styleUrls: ['app/sorter/sorter.css']
+  styleUrls: ['./sorter.component.css']
 })
 export class SorterComponent {}

@@ -4,20 +4,13 @@
     "declaration": false,
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
-    "mapRoot": "",
-    "module": "system",
+    "module": "commonjs",
     "moduleResolution": "node",
-    "noEmitOnError": true,
-    "noImplicitAny": false,
-    "outDir": "../dist/",
-    "rootDir": ".",
+    "outDir": "../dist/out-tsc-e2e",
     "sourceMap": true,
     "target": "es5",
-    "inlineSources": true
-  },
-
-  "files": [
-    "app.ts",
-    "typings.d.ts"
-  ]
+    "typeRoots": [
+      "../node_modules/@types"
+    ]
+  }
 }

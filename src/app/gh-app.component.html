@@ -1,0 +1,14 @@
+<div class="container">
+  <h1>
+    Hello, gh-app!
+  </h1>
+  <div>
+    <gh-app-search (onSearch)="search($event)"></gh-app-search>
+    <gh-app-sorter *ngIf="isListAvailable()"></gh-app-sorter>
+    <ul>
+      <li *ngFor="let repo of repositories; trackBy:trackReposBy">
+        <gh-app-repository [data]="repo"></gh-app-repository>
+      </li>
+    </ul>
+  </div>
+</div>
